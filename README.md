@@ -37,7 +37,7 @@ ButterflyClassification/
 1. **Clone the repository**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/yaswanth33-ui/Enchanted-Wings-Marvels-of-Butterfly-Species.git
    cd ButterflyClassification
    ```
 
