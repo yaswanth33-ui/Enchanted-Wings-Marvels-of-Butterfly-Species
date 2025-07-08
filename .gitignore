@@ -1,0 +1,125 @@
+# Dataset and large data files
+# dataset/ # Removed to track the dataset directory
+# *.csv # Removed to track CSV files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# Model files and checkpoints
+model/
+*.pkl
+*.pth
+*.pt
+*.h5
+*.hdf5
+*.onnx
+*.pb
+*.tflite
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+conda-env/
+.conda/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+logs/
+tmp/
+temp/
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# PyTorch specific
+*.pth.tar
+lightning_logs/
+wandb/
+mlruns/
+
+# Matplotlib cache
+.matplotlib/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Large output files
+*.out
+*.output
+predictions/
+results/
+outputs/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Compressed files (if they contain large datasets)
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Exclude efficientnet_classifier.py and model.ipynb from being ignored
+!efficientnet_classifier.py
+!model.ipynb
+!butterfly_classifier_joblib.pkl

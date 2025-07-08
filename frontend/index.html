@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Classification AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-bug"></i>
+                    <span>ButterflyAI</span>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#classify" class="nav-link">Classify</a>
+                    <a href="#about" class="nav-link">About</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Discover the Beauty of
+                        <span class="gradient-text">Butterflies</span>
+                    </h1>
+                    <p class="hero-description">
+                        Upload an image of a butterfly and let our AI-powered classifier identify its species with cutting-edge deep learning technology.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToClassify()">
+                            <i class="fas fa-camera"></i>
+                            Start Classifying
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToAbout()">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="butterfly-animation">
+                        <i class="fas fa-bug butterfly-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-container">
+                <h2 class="section-title">Why Choose ButterflyAI?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced EfficientNet neural network trained on thousands of butterfly images for accurate classification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Get instant results with our optimized model that processes images in real-time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>High Accuracy</h3>
+                        <p>State-of-the-art classification accuracy with confidence scores for each prediction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classification Section -->
+        <section id="classify" class="classify-section">
+            <div class="classify-container">
+                <h2 class="section-title">Classify Your Butterfly</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content" id="uploadContent">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Upload Butterfly Image</h3>
+                        <p>Drag and drop an image here, or click to select</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button class="btn btn-outline" onclick="document.getElementById('imageInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                    <div class="preview-container" id="previewContainer" style="display: none;">
+                        <img id="previewImage" alt="Preview">
+                        <div class="preview-actions">
+                            <button class="btn btn-primary" id="classifyBtn" onclick="classifyImage()">
+                                <i class="fas fa-magic"></i>
+                                Classify Image
+                            </button>
+                            <button class="btn btn-secondary" onclick="resetUpload()">
+                                <i class="fas fa-times"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-container" id="resultsContainer" style="display: none;">
+                    <div class="result-card">
+                        <h3>Classification Result</h3>
+                        <div class="result-content">
+                            <div class="result-species">
+                                <strong id="speciesName">-</strong>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-label">Confidence:</div>
+                                <div class="confidence-progress">
+                                    <div class="confidence-fill" id="confidenceFill"></div>
+                                </div>
+                                <div class="confidence-value" id="confidenceValue">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Spinner -->
+                <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Classifying your butterfly...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About ButterflyAI</h2>
+                        <p>
+                            ButterflyAI is an advanced machine learning application that uses deep learning to classify butterfly species from images. Our model is built using EfficientNet architecture and trained on a comprehensive dataset of butterfly images.
+                        </p>
+                        <div class="tech-stack">
+                            <h3>Technology Stack</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">EfficientNet</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">95%+</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Training Images</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">&lt;1s</div>
+                            <div class="stat-label">Processing Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 ButterflyAI. Made with <i class="fas fa-heart"></i> for butterfly enthusiasts.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
